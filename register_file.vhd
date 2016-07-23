@@ -16,7 +16,8 @@ generic (
     reg1_source   : in std_logic_vector(4 downto 0);
     reg2_source   : in std_logic_vector(4 downto 0);
     reg3_dest	  : in std_logic_vector(4 downto 0);
-    clk           : in std_logic
+    clk           : in std_logic;
+    rst           : in std_logic
     );
 end register_file;
 
@@ -26,10 +27,18 @@ architecture behavioral of register_file is
 	signal registers : registerFile;
 
 begin
-	regFile : process (clk) is
+	process (rst,clk) is
 	
 	begin
-	if rising_edge(clk) then
+	if (rst = '1') then 
+		output1 <= x"00000000";
+		output2 <= x"00000001";
+		
+	  for i in 0 to 31 loop				  
+		registers(i) <=(others =>'0');
+	  end loop;
+	  
+	elsif (rising_edge(clk)) then
 			-- Read A and B before bypass
 			output1 <= registers(to_integer(unsigned(reg1_source)));
 			output2 <= registers(to_integer(unsigned(reg2_source)));
@@ -46,7 +55,6 @@ begin
 			if reg2_source = reg3_dest then  -- Bypass for read B
 				output2 <= input;
 			end if;
-		
 		end if;
     end if;
 	

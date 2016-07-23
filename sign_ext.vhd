@@ -17,16 +17,16 @@ architecture SIGNEXT of sign_ext is
 
 begin
 
-process
+process(input)
 
 begin
 
 	if(input(WIDTH-1) = '1') then
-		output <= std_logic_vector(x"FF" & input);
-	elsif(input(WIDTH-1) = '0') then
-		output <= std_logic_vector(x"00" & input);
+		output <= std_logic_vector(x"FFFF" & input);
+	else
+		output <= std_logic_vector(x"0000" & input);
 	end if;
 	
 end process;
-	
+
 end SIGNEXT;
