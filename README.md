@@ -1,6 +1,6 @@
 # MIPS 32-bit 
 
-Version 1.0 //I will be implementing a new version soon.
+Version 1.0, I will be implementing a new version soon.
 ------------------------------------------------------------------------------------------------------------------------
 
 Introduction
@@ -20,11 +20,11 @@ The simulation will start the clock and processor should compute whatever was in
 The instructions you can use are:
 ------------------------------------------------------------------------------------------------------------------------
 
-lw
-sw
-r-type
-branch
-jump
+lw  
+sw  
+r-type  
+branch  
+jump  
 
 These instructions are sufficient for small simple programs.
 
