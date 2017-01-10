@@ -31,6 +31,6 @@ These instructions are sufficient for small simple programs.
 How to add Instructions:
 ------------------------------------------------------------------------------------------------------------------------
 
-The hardware exists to add more instructions especially I-type (immediate) instructions. Look through the data path and decide which singles need to be asserted in order to implement an instruction. Add the states to the datapath enabling the right signals.
+The hardware exists to add more instructions especially I-type (immediate) instructions. Look through the data path and decide which signals need to be asserted in order to implement an instruction. Add the states to the datapath by asserting true the signals required to handle the hardware.
 
 I recommend building your own version as it is easier to understand when you build it from scratch, using my code as a reference.
