@@ -8,7 +8,7 @@ Introduction
 This project aims to synthesize a 32-bit MIPS processor using VHDL.
 I've provided a test bench and a .mif file that simulates basic instructions. Not all mips instructions are implemented but could easily be added to the controller. I will add instructions as time allows me. The MIPS architecture is a RISC architecture.
 
-This particular project implements the multi-cycled version. The processor is not ready to be programmed to an FPGA but the code could easily be added.
+This particular project implements the multi-cycled version. The processor is not ready to be programmed to an FPGA but the code could easily be added to any FPGA of your choosing. Simply create a new "top level" entity that maps all the input and output signals to the FPGA. A recommended FPGA is the Altera Cyclone III.
 
 How to Simulate:
 ------------------------------------------------------------------------------------------------------------------------
@@ -31,6 +31,6 @@ These instructions are sufficient for small simple programs.
 How to add Instructions:
 ------------------------------------------------------------------------------------------------------------------------
 
-The hardware exists to add more instructions especially I-type (immediate) instructions. Look through the data path and decide which signals need to be asserted in order to implement an instruction. Add the states to the datapath by asserting true the signals required to handle the hardware.
+The HDL exists to add more instructions especially I-type (immediate) instructions. Look through the data path and decide which signals need to be asserted in order to implement an instruction. Add the states to the datapath by asserting true the signals required to handle the hardware. The signals are all asserted true and false within the controller entity.
 
 I recommend building your own version as it is easier to understand when you build it from scratch, using my code as a reference.
